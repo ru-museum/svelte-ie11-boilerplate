@@ -12,6 +12,16 @@ cd svelte-app
 
 ```
 
+# 【注意】
+**! could not find commit hash for master** のエラーが表示された場合は、branch 名を指定して下さい(**#main**)。
+
+npx degit ru-museum/svelte-ie11-boilerplate<strong>#main</strong> svelte-app
+
+- デフォルト branch 名は、**master** から **main** へ変更されています。
+- degit 側が未対応の理由に依ると思われます。
+
+　　参照 ⇒ [github / renaming: Renaming the default branch from master](https://github.com/github/renaming)
+
 - 構築するには [Node.js](https://nodejs.org/) のインストールが必要です。
 
 
@@ -44,4 +54,4 @@ npm run build
 ```
 
 4. WEB 上へ公開するには、public フォルダ内の必要なファイル(.map を除く)を アップします。
-- public 内にはその他の必要に応じたファイルを設置出来ます。
+
