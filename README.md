@@ -2,6 +2,10 @@
 svelte-template for IE11 
 
 - この Svelte apps は [https://github.com/sveltejs/template](https://github.com/sveltejs/template) に基づいています。
+  - 最新版 sveltejs/template に対応しています。
+     - [rollup-plugin-svelte](https://github.com/sveltejs/rollup-plugin-svelte/blob/master/CHANGELOG.md) 7.x  
+     - Rollup 2.x
+ 
 - 特に IE11 に対応するためのものです。  
 ※  IE11対応 **fetch** の使い方 (src/main.js に定義してあります) 
  ```
