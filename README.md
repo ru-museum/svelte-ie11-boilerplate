@@ -2,7 +2,7 @@
 svelte-template for IE11 
 
 - この Svelte apps は [https://github.com/sveltejs/template](https://github.com/sveltejs/template) に基づいています。
-  - 最新版 sveltejs/template に対応しています。
+  - 最新版 sveltejs/template に対応しています(2021-01-31)。
      - [rollup-plugin-svelte](https://github.com/sveltejs/rollup-plugin-svelte/blob/master/CHANGELOG.md) 7.x  
      - Rollup 2.x
  
