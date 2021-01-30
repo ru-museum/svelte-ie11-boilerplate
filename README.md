@@ -2,9 +2,9 @@
 svelte-template for IE11 
 
 - この Svelte apps は [https://github.com/sveltejs/template](https://github.com/sveltejs/template) に基づいています。
-- 特に IE11 に対応するためのものです。
-　※  IE11対応 **fetch** の使い方  
-```
+- 特に IE11 に対応するためのものです。  
+※  IE11対応 **fetch** の使い方  
+ ```
 import {fetch as fetchPolyfill} from 'whatwg-fetch';  
 const res = await fetchPolyfill(`./data.json`);
 ```
