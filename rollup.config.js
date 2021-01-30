@@ -8,6 +8,7 @@ import svg from 'rollup-plugin-svg-import';
 import postcss from 'rollup-plugin-postcss';
 import autoPreprocess from 'svelte-preprocess';
 import { scss } from 'svelte-preprocess';
+import css from 'rollup-plugin-css-only';
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -22,24 +23,19 @@ export default {
 	external: ['es6-shim'],
 	plugins: [
 		svelte({
-
-         // emitCss: true,
-         preprocess: autoPreprocess(),
-         preprocess: [
-           scss({ /* scss options */ })
-         ],
-
+		 // emitCss: true,
+		 preprocess: autoPreprocess(),
+		 preprocess: [
+		   scss({ /* scss options */ })
+		 ],
 			// enable run-time checks when not in production
 			dev: !production,
-			// we'll extract any component CSS out into
-			// a separate file — better for performance
-			css: css => {
-				css.write('public/bundle.css');
-			}
 		}),
-
-      svg({ stringify: true }),
-      postcss(),
+		// we'll extract any component CSS out into
+		// a separate file - better for performance		
+		css({ output: 'public/bundle.css' }),
+		svg({ stringify: true }),
+		postcss(),
 
 		// If you have external dependencies installed from
 		// npm, you'll most likely need these plugins. In
