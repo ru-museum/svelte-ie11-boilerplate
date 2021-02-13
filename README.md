@@ -32,7 +32,7 @@ npx degit ru-museum/svelte-ie11-boilerplate#main svelte-app
 ```
 
 - デフォルト branch 名は、**master** から **main** へ変更されています。
-- degit 側が未対応の理由に依ると思われます。
+- **npm** 又は **degit** 側が未対応の理由に依ると思われます。
 
 　　参照 ⇒ [github / renaming: Renaming the default branch from master](https://github.com/github/renaming)
 
