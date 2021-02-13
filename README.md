@@ -2,16 +2,18 @@
 svelte-template for IE11 
 
 - この Svelte apps は [https://github.com/sveltejs/template](https://github.com/sveltejs/template) に基づいています。
+  - 非推奨となったパッケージを整理削除しました(2021-02-14)。
+     - @babel/polyfill, node-sass 等。
   - 最新版 sveltejs/template に対応しています(2021-01-31)。
      - [rollup-plugin-svelte](https://github.com/sveltejs/rollup-plugin-svelte/blob/master/CHANGELOG.md) 7.x  
      - Rollup 2.x
- 
-- 特に IE11 に対応するためのものです。  
+- 特に IE11 に対応するためのものです(バージョン 11.1087.16299.0 で確認)。  
 ※  IE11対応 **fetch** の使い方 (src/main.js に定義してあります) 
  ```
 import {fetch as fetchPolyfill} from 'whatwg-fetch';  
 const res = await fetchPolyfill(`./data.json`);
 ```
+- Android 4.4- で確認。  
 
 - この boilerplate に基づき新規の project を構築するには [degit](https://github.com/Rich-Harris/degit) を使用します。
 
