@@ -7,7 +7,7 @@ svelte-template for IE11
   - 最新版 sveltejs/template に対応しています(2021-01-31)。
      - [rollup-plugin-svelte](https://github.com/sveltejs/rollup-plugin-svelte/blob/master/CHANGELOG.md) 7.x  
      - Rollup 2.x
-- 特に IE11 に対応するためのものです(バージョン 11.1087.16299.0 で確認)。
+- 特に IE11 に対応するためのものです(バージョン 11.1087.16299.0 で確認)。  
 ※  IE11対応 **fetch** の使い方 (src/main.js に定義してあります) 
  ```
 import {fetch as fetchPolyfill} from 'whatwg-fetch';  
