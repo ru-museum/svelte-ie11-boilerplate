@@ -1,11 +1,9 @@
 import svelte from 'rollup-plugin-svelte';
+import babel from "@rollup/plugin-babel";
 import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
 import livereload from 'rollup-plugin-livereload';
-import babel from 'rollup-plugin-babel'; // terser の前に置く 
 import { terser } from 'rollup-plugin-terser';
-import svg from 'rollup-plugin-svg-import';
-import postcss from 'rollup-plugin-postcss';
 import autoPreprocess from 'svelte-preprocess';
 import { scss } from 'svelte-preprocess'
 import css from 'rollup-plugin-css-only';
@@ -41,10 +39,9 @@ export default {
 		name: 'app',
 		file: 'public/build/bundle.js'
 	},
-	external: ['es6-shim'],
 	plugins: [
 		svelte({
-         // emitCss: true,
+
          preprocess: autoPreprocess(),
          preprocess: [
            scss({ /* scss options */ })
@@ -55,12 +52,10 @@ export default {
 				dev: !production
 			}
 		}),
+
 		// we'll extract any component CSS out into
 		// a separate file - better for performance
 		css({ output: 'bundle.css' }),
-      svg({ stringify: true }),
-      postcss(),
-
 
 		// If you have external dependencies installed from
 		// npm, you'll most likely need these plugins. In
@@ -72,35 +67,36 @@ export default {
 			dedupe: ['svelte']
 		}),
 		commonjs(),
-		
+
 		/**
 		 * 記述は resolve commonjs の後でなければエラー
 		 * compile to good old IE11 compatible ES5
 		 */
-		babel({
-		　extensions: [ '.js', '.mjs', '.html', '.svelte' ],
-		　runtimeHelpers: true,
-		　exclude: [ 'node_modules/@babel/**', 'node_modules/core-js/**' ],
-		　presets: [
-		   　　[
-		   　　　　'@babel/preset-env',
-		   　　　　{
-		   　　　　　　targets: '> 0.25%, not dead',
-		   　　　　　　useBuiltIns: 'usage',
-		   　　　　　　corejs: 3
-		   　　　　}
-		   　　]
-	   　　],
-	   　　plugins: [
-	   　　　　'@babel/plugin-syntax-dynamic-import',
-	   　　　　[
-	   　　　　　　'@babel/plugin-transform-runtime',
-			   　　　　{
-			   　　　　　　useESModules: true
-			   　　　　}
-	    	　　 ]
-			]
-		}),
+	      babel({
+		extensions: [".js", ".mjs", ".html", ".svelte"],
+		babelHelpers: 'runtime',
+		exclude: [ 'node_modules/@babel/**', 'node_modules/core-js/**' ],
+		presets: [
+		  [
+		    "@babel/preset-env",
+		    {
+		       targets: "> 0.25%, not dead",
+		       useBuiltIns: 'usage',
+		       corejs: 3
+		    },
+		  ],
+		],
+		plugins: [
+		  "@babel/plugin-syntax-dynamic-import",
+		  [
+		    "@babel/plugin-transform-runtime",
+		    {
+		      useESModules: true
+		    },
+		  ],
+		],
+	      }),
+
 
 
 		// In dev mode, call `npm run start` once
