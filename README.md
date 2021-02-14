@@ -15,6 +15,8 @@ const res = await fetchPolyfill(`./data.json`);
 ```
 - Android 4.4- で確認しています。  
 
+- 開発環境：Linux(Debian), Node.js 15.8.0。  
+
 - この boilerplate に基づき新規の project を構築するには [degit](https://github.com/Rich-Harris/degit) を使用します。
 
 ```
