@@ -59,6 +59,11 @@ npx degit ru-museum/svelte-ie11-boilerplate#main svelte-app
 :global(app),:global(body),:global(html){ 
 ```
 
+或いは、
+```
+:global(:where(app, body, html)) {
+```
+
 # 構築手順
 
 1. 依存ライブラリーのインストール。
