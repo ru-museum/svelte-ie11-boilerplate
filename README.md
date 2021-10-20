@@ -1,6 +1,7 @@
 # svelte-ie11-boilerplate
 svelte-template for IE11 
 
+# 特徴
 - この Svelte apps は [https://github.com/sveltejs/template](https://github.com/sveltejs/template) に基づいています。
   - 非推奨となったパッケージを整理削除しました(2021-02-14)。
      - @babel/polyfill, node-sass 等。
@@ -83,4 +84,36 @@ npm run build
 ```
 
 4. WEB 上へ公開するには、public フォルダ内の必要なファイル(.map を除く)を アップします。
+ 
+
+# TypeScript 及び SCSS(SASS) の利用
+
+- TypeScript を利用する為のスクリプトが用意されています：
+```
+node scripts/setupTypeScript.js 
+```
+## 【注意】
+
+* TypeScript 利用での build 時に以下の警告が表示される場合は一部を修正して下さい。
+```
+(!) Plugin typescript: @rollup/plugin-typescript: Typescript 'sourceMap' compiler option must be set to generate source maps.
+```
+**rollup.config.js**：  
+【修正】  sourcemap: true　⇒ **sourcemap: !production**
+
+```
+export default {
+    input: 'src/main.ts',
+    output: {
+    // sourcemap: true,  
+    sourcemap: !production,
+```
+　　※ [参考：stackoverflow](https://stackoverflow.com/questions/63128597/how-to-get-rid-of-the-rollup-plugin-typescript-rollup-sourcemap-option-must)  
+  
+又は以下を利用出来ます。
+
+- TypeScript 及び SCSS(SASS) に対応 app（公開：2021/10/20）：  
+[svelte-ie11-boilerplate-ts-scss](https://github.com/ru-museum/svelte-ie11-boilerplate-ts-scss)
+
+
 
