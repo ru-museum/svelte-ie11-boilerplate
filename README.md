@@ -59,7 +59,21 @@ npx degit ru-museum/svelte-ie11-boilerplate#main svelte-app
 ```
 :global(app),:global(body),:global(html){ 
 ```
-
+### 【注意: 3】（2021-11-27）
+- marked v. 4.0.0- において下記のエラーが表示される場合は以下を参照して下さい。  
+- ファイルが cjs.js, esm.js, umd.js とに分割されています。
+```
+ [!] Error: 'default' is not exported by node_modules/marked/lib/marked.esm.js, imported by src/*.svelte
+  import marked from 'marked';
+         ^
+```
+- **module 名を { } で明示する必要があります**。
+```
+  import { marked } from 'marked';
+  
+  marked(text) OR marked.parse(text) 
+```
+参照 ⇒ [Error: "&#91;name&#93; is not exported by &#91;module&#93;"] (https://rollupjs.org/guide/en/#error-name-is-not-exported-by-module)
 # 構築手順
 
 1. 依存ライブラリーのインストール。
