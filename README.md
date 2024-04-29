@@ -1,9 +1,9 @@
 # svelte-ie11-boilerplate
 svelte-template for IE11  
 
-**[ 注意 ]** 　元となる **sveltejs/template** は既に更新が止まり **Public Archive** となり **vite** への移行が促されていますのでご注意下さい。
-
+**[ 注意 ]** 　元となる **sveltejs/template** は既に更新が止まり **Public Archive** となり **vite** への移行が促されていますのでご注意下さい。  
 # 特徴
+- これは特にローカルサーバーを必要（kitの場合）とせず、**standalone**での起動が可能です。
 - **svelte 4** へのバージョンアップがされています（2023-07-25）。  
 - この Svelte apps は [https://github.com/sveltejs/template](https://github.com/sveltejs/template) に基づいています。
   - 非推奨となったパッケージを整理削除しました(2021-02-14)。
